@@ -1,5 +1,11 @@
+# encoding: utf-8
+
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery
+  
+  def initialize(*params)
+    super(*params)
+    @style="application"
+    @script="application"
+  end
 end

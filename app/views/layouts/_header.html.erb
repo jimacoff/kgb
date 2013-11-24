@@ -1,0 +1,18 @@
+<header>
+	<div class="wrapper">
+	<h1><%=link_to '한국 도박자 연맹(Korea Gambler Brotherhood)',root_path  %></h1>
+	<nav>
+		<ul>
+			<li></li>
+			<li></li>
+			<% if user_signed_in? %>				
+			<li><%=link_to(current_user.name,edit_user_registration_path) %>님 환영합니다.</li>
+			<li><%= link_to('로그아웃',destroy_user_session_path) %></li>
+			<% else %>
+			<li><%= link_to('로그인',new_user_session_path) %></li>
+			<li><%= link_to('가입하기',new_user_registration_path) %></li>
+			<% end %>
+		</ul>
+	</nav>
+	</div>
+</header>

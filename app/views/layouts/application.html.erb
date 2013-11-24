@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <title>Kgb</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<title>한국 도박자 연맹(KGB)  |   www.sejin-openmarket.kr</title>
+<meta charset="utf-8">	
+<meta name="robots" content="all, index, follow" />
+<meta name="application-name" content="KGB 홈페이지" />
+<meta name="keywords" content="도박,gamble,바카라,포커,블랙잭,카지노.casino,사채,빛,패가망신" />
+<meta name="description" content="KGB 홈페이지입니다." />
+<meta name="author" content="Sleeping-Lion" />
+<link rel="shortcut icon" href="/assets/favicon.ico" />
+<%= stylesheet_link_tag @style, :media => "all" %>
+<%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body id="main_page">
+<!--[if lt IE 9]>	
+<%= javascript_include_tag "/assets/html5.js" %>	
+<%= stylesheet_link_tag "/assets/ie.css", :media => "all" %>
+<![endif]-->
+<%= render :partial => 'layouts/header' %>
+<div id="mom">
+	<div id="main">
+		<div class="wrapper">
+		<%= yield %>
+		</div>
+	</div>
+</div>
+<div class="slboard_overlay" id="overlay"></div>
+<%= render :partial => 'layouts/footer' %>
+<%= javascript_include_tag @script %>
 </body>
 </html>

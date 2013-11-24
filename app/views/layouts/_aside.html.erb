@@ -1,0 +1,11 @@
+<aside>
+	<nav>
+		<ul>
+			<% if(@product_categories.length>0) %>
+			<% @product_categories.each do |product_category| %>		
+			<li><%=link_to product_category.title,products_path(:product_category_id=>product_category) %></li>
+			<% end %>
+			<% end %>
+		</ul>
+	</nav>
+</aside>
